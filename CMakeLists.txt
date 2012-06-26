@@ -5,8 +5,7 @@
 
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6 FATAL_ERROR)
 
-PROJECT(auxos_common)
+PROJECT(auxos_segwayrmp400)
 
 # GO FORTH!
-SUBDIRS(dubins_path_planning)
-SUBDIRS(dubins_path_following)
+SUBDIRS(segwayrmp400_sim)
