@@ -1,0 +1,28 @@
+<launch>
+
+    <node pkg="sim_common" type="morse_loader.py" name="morse_loader"
+          output="screen" required="true">
+
+    <param name="builder_file" value="$(find segwayrmp400_sim)/builder/SegwayOutdoor.py" />
+    <param name="edit_mode" value="True" />
+
+    </node>
+
+    <node pkg="dubins_controller_node" type="dubins_controller_node" name="dubins_controller_node"
+          output="screen" required="true">
+
+    <param name="control_mode" value="Robot" />
+    <param name="control_rate" value="20" />
+    <param name="radius" value="3" />
+    <param name="path_type" value="DB" />
+    <param name="k_y_err" value="1" />
+    <param name="k_psi_error" value="1" />
+    <!-- param name="path_file" value="$(find segwayrmp400_sim)/data/simple_path.txt" / -->
+
+    </node>
+
+    <include file="$(find dubins_controller_node)/launch/dubins_path_loader.launch" />
+
+
+</launch>
+
