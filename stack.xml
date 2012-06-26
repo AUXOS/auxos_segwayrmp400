@@ -1,0 +1,10 @@
+<stack>
+  <description brief="IS4S/Auburn University AUXOS Autonomy System - SegwayRMP400 Stack">
+      ROS Packages common to the AUXOS SegwayRMP400 platform.
+  </description>
+  <author>David Hodo</author>
+  <license>Copyright 2012 - IS4S - All Rights Reserved</license>
+  <review status="experimental" notes="" />
+  <depend stack="ros" />
+
+</stack>
