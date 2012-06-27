@@ -21,3 +21,6 @@ bin
 *.txt.user
 *.*~
 .svn
+
+*.blend1
+*.blend2
