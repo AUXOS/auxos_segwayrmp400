@@ -7,7 +7,7 @@
   <material name="White"><color rgba="1.0 1.0 1.0 1.0"/></material>
   <material name="Blue"><color rgba="0.0 0.0 0.8 1.0"/></material>
   <material name="Black"><color rgba="0.0 0.0 0.0 1.0"/></material>
-  <material name="Grey"><color rgba="0.7 0.7 0.7 0.7"/></material>
+  <material name="Grey"><color rgba="0.7 0.7 0.7 1.0"/></material>
   <material name="atrv_orange"><color rgba="0.8 0.16 0.0 1" /></material>
   <material name="clear"><color rgba="0 0 0 0"/></material>
 
@@ -50,10 +50,11 @@
     <xacro:default_inertial mass="80"/>
 
     <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://segwayrmp400_description/meshes/segwayrmp400.dae"/>
+        <mesh filename="package://segwayrmp400_description/meshes/segwayrmp400_chassis.stl"/>
       </geometry>
-      <!-- <material name="clear"/> -->
+      <material name="Grey"/>
     </visual>
 
     <collision>
@@ -79,9 +80,9 @@
       <visual>
         <origin xyz="0 0 ${wheel_width/2}" rpy="0 0 0" />
         <geometry>
-          <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
+          <mesh filename="package://segwayrmp400_description/meshes/segwayrmp400_wheel.stl"/>
         </geometry>
-        <material name="Black"/>
+        <material name="Grey"/>
       </visual>
 
       <collision>
@@ -96,7 +97,7 @@
     <joint name="${prefix}_wheel_joint" type="fixed">
       <parent link="base_link"/>
       <child link="${prefix}_wheel_link"/>
-      <origin xyz="${(chassis_length/2 - wheel_radius)*reflect_x} ${(chassis_width/2 + 0.03)*reflect_y} ${wheel_radius - ground_clearance}"
+      <origin xyz="${(0.27)*reflect_x} ${(chassis_width/2 + 0.03)*reflect_y} ${0.1}"
               rpy="${(M_PI/2)*reflect_y*-1} 0 0"/>
     </joint>
   </xacro:macro>
