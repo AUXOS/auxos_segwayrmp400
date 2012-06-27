@@ -51,7 +51,7 @@
 
     <visual>
       <geometry>
-        <mesh filename="package://gavlab_atrv_description/meshes/atrv_chassis.dae"/>
+        <mesh filename="package://segwayrmp400_description/meshes/segwayrmp400.dae"/>
       </geometry>
       <!-- <material name="clear"/> -->
     </visual>
@@ -117,59 +117,6 @@
     <origin xyz="-0.11 0 0.27" rpy="0 0 0"/>
     <parent link="base_link"/>
     <child link="imu_frame"/>
-  </joint>
-
-  <!-- laser_link -->
-  <xacro:property name="laser_radius" value="0.045"/>
-  <xacro:property name="laser_height" value="0.16"/>
-  <link name="laser_link">
-    <xacro:default_inertial mass="3"/>
-
-    <visual>
-      <origin xyz="0 0 ${0.04-laser_height/2.0}" rpy="0 0 0"/>
-      <geometry>
-        <cylinder radius="${laser_radius}" length="${laser_height}"/>
-      </geometry>
-      <material name="Grey"/>
-    </visual>
-
-    <collision>
-      <origin xyz="0 0 ${0.04-laser_height/2.0}" rpy="0 0 0"/>
-      <geometry>
-        <cylinder radius="${laser_radius}" length="${laser_height}"/>
-      </geometry>
-    </collision>
-  </link>
-
-  <!-- base_link -> laser_link -->
-  <joint name="base_laser_joint" type="fixed">
-    <origin xyz="${0.015+laser_radius+chassis_length/2.0} 0 ${0.28-ground_clearance}" rpy="0 0 0"/>
-    <parent link="base_link"/>
-    <child link="laser_link"/>
-  </joint>
-
-  <!-- kinect_link -->
-  <link name="asus_link">
-    <xacro:default_inertial mass="0.0001"/>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://gavlab_atrv_description/meshes/kinect.dae"/>
-      </geometry>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <box size="0.0730 0.2760 0.0720"/>
-      </geometry>
-    </collision>
-  </link>
-
-  <!-- base_link -> base_kinect_join -->
-  <joint name="base_kinect_joint" type="fixed">
-    <origin xyz="${(chassis_length/2)-0.19} 0 ${chassis_height+0.13-0.06}" rpy="0 0 0"/>
-    <parent link="base_link"/>
-    <child link="asus_link"/>
   </joint>
 
 </robot>
