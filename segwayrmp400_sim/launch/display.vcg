@@ -1,7 +1,7 @@
 Background\ ColorB=0.466667
 Background\ ColorG=0
 Background\ ColorR=0.0941176
-Camera\ Config=0.459798 3.779 12.9385 -0.556691 2.02856 0.0888522
+Camera\ Config=0.459798 3.779 21.3221 -0.556691 2.02856 0.0888522
 Camera\ Type=rviz::OrbitViewController
 Fixed\ Frame=/odom
 Grid.Alpha=0.5
@@ -19,14 +19,8 @@ Grid.OffsetZ=0
 Grid.Plane=0
 Grid.Plane\ Cell\ Count=10
 Grid.Reference\ Frame=<Fixed Frame>
-Path.Alpha=1
-Path.ColorB=0
-Path.ColorG=1
-Path.ColorR=0.1
-Path.Enabled=1
-Path.Topic=/configurations
 Property\ Grid\ Splitter=919,78
-Property\ Grid\ State=expanded=.Global Options,Grid.Enabled,Robot Model.Enabled,TF.Enabled,Path.Enabled;splitterratio=0.5
+Property\ Grid\ State=expanded=.Global Options,Grid.Enabled,Robot Model.Enabled;splitterratio=0.5
 QMainWindow=000000ff00000000fd00000003000000000000011d00000437fc0200000001fb000000100044006900730070006c006100790073010000001d00000437000000ee00ffffff000000010000013100000437fc0200000003fb0000001e0054006f006f006c002000500072006f0070006500720074006900650073010000001d000001170000006700fffffffb0000000a00560069006500770073010000013a000001fd000000bb00fffffffb0000001200530065006c0065006300740069006f006e010000033d000001170000006700ffffff000000030000073f0000003efc0100000001fb0000000800540069006d006501000000000000073f000002bf00ffffff000004e50000043700000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
 Robot\ Model.Alpha=1
 Robot\ Model.Collision\ Enabled=0
@@ -75,9 +69,6 @@ Name=Robot Model
 [Display2]
 ClassName=rviz::TFDisplay
 Name=TF
-[Display3]
-ClassName=rviz::PathDisplay
-Name=Path
 [TF.Frames.]
 base_footprint.Enabled=1
 base_link.Enabled=1
@@ -88,7 +79,7 @@ odom.Enabled=1
 right_front_wheel_link.Enabled=1
 right_rear_wheel_link.Enabled=1
 [Window]
-Height=1212
-Width=1871
-X=-66
+Height=1176
+Width=1855
+X=-59
 Y=0
