@@ -24,3 +24,5 @@ bin
 
 *.blend1
 *.blend2
+scene.*.blend
+
