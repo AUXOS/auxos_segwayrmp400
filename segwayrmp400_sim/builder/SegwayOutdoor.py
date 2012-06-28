@@ -4,6 +4,7 @@ import math
 
 vOff=0.3
 zRot=math.pi/2 # correct for vehicle axis being y-forward
+zRot=0
 
 # Append ATRV robot to the scene
 segway = WheeledRobot('segwayrmp400')
@@ -35,6 +36,11 @@ pose.rotate(z=zRot)
 segway.append(pose)
 pose.configure_mw('ros')
 
+# Append a Wheel Encoder sensor
+#encoders = Sensor('wheel_encoders')
+#encoders.translate(z=vOff)
+#encoders.rotate(z=zRot)
+#segway.append(encoders)
 
 # Append a GPS sensor
 gps = Sensor('gps')
