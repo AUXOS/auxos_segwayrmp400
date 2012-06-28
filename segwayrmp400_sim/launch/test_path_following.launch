@@ -4,12 +4,16 @@
           output="screen" required="true">
 
     <param name="builder_file" value="$(find segwayrmp400_sim)/builder/SegwayOutdoor.py" />
-    <param name="edit_mode" value="True" />
+    <param name="edit_mode" value="False" />
 
     </node>
 
     <node pkg="dubins_controller_node" type="dubins_controller_node" name="dubins_controller_node"
           output="screen" required="true">
+
+    <param name="robot_topic" value="/segwayrmp400/Pose" />
+    <!-- <param name="trailer_topic" value="Robot" /> -->
+
 
     <param name="control_mode" value="Robot" />
     <param name="control_rate" value="20" />
@@ -21,8 +25,13 @@
 
     </node>
 
-    <include file="$(find dubins_controller_node)/launch/dubins_path_loader.launch" />
+    <node pkg="dubins_controller_node" type="path_loader.py" name="path_loader"
+      output="screen" required="true">
 
+    <param name="load_path_file" value="$(find segwayrmp400_sim)/data/simple_path.txt" />
+    <param name="path_frame_id" value="/segwayrmp400/Pose" />
+
+    </node>
 
 </launch>
 
