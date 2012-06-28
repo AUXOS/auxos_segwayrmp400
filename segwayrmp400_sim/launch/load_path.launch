@@ -1,0 +1,10 @@
+<launch>
+    <node pkg="dubins_controller_node" type="path_loader.py" name="load_segway_path"
+          output="screen" required="true">
+
+    <param name="load_path_file" value="$(find segwayrmp400_sim)/data/simple_path.txt" />
+
+	<param name="path_frame_id" value="odom" />
+
+    </node>
+</launch>
