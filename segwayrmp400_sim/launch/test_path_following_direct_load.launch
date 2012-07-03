@@ -20,8 +20,10 @@
     <param name="control_rate" value="20" />
     <param name="radius" value="3" />
     <param name="path_type" value="DB" />
+    <!-- <param name="k_y_error" value="0.5" />
+    <param name="k_psi_error" value="4.4" /> -->
     <param name="k_y_error" value="0.5" />
-    <param name="k_psi_error" value="0" />
+    <param name="k_psi_error" value="0.89" />
     <param name="path_file" value="$(find segwayrmp400_sim)/data/simple_path.txt" />
 
     </node>
