@@ -3,7 +3,7 @@ import math
 
 
 vOff=0.3
-zRot=math.pi/2 # correct for vehicle axis being y-forward
+#zRot=math.pi/2 # correct for vehicle axis being y-forward
 zRot=0
 
 # Append ATRV robot to the scene
@@ -18,21 +18,21 @@ motion = Actuator('vw_diff_drive')
 #motion.translate(z=vOff)
 segway.append(motion)
 motion.configure_mw('ros')
-motion.configure_modifier('NED')
+#motion.configure_modifier('NED')
 
 
 # Append an IMU sensor
 imu = Sensor('imu')
-imu.translate(z=vOff)
-imu.rotate(x=math.pi,z=zRot)
+imu.translate(z=0.05)
+#imu.rotate(x=math.pi,z=zRot)
 segway.append(imu)
 imu.configure_mw('ros')
 
 
 # Append a Pose sensor
 pose = Sensor('pose')
-pose.translate(z=vOff)
-pose.rotate(z=zRot)
+#pose.translate(z=vOff)
+#pose.rotate(z=zRot)
 segway.append(pose)
 pose.configure_mw('ros')
 
@@ -44,8 +44,8 @@ pose.configure_mw('ros')
 
 # Append a GPS sensor
 gps = Sensor('gps')
-gps.translate(z=vOff)
-gps.rotate(z=zRot)
+#gps.translate(z=vOff)
+#gps.rotate(z=zRot)
 segway.append(gps)
 gps.configure_mw('ros')
 
