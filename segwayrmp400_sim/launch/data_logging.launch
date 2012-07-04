@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="rosbag" type="rosbag" name="rosbag_record" output="screen"
+    args="record -o /home/hododav/Data/segway_sim_log"/>
+</launch>
