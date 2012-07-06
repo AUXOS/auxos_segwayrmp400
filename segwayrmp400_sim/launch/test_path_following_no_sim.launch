@@ -21,17 +21,18 @@
     <param name="path_type" value="DB" />
     <param name="k_y_err" value="1" />
     <param name="k_psi_error" value="1" />
-    <!-- param name="path_file" value="$(find segwayrmp400_sim)/data/simple_path.txt" / -->
+    <param name="path_file" value="$(find segwayrmp400_sim)/data/simple_path.txt" />
 
     </node>
 
-    <node pkg="dubins_controller_node" type="path_loader.py" name="path_loader"
+    <!-- <node pkg="dubins_controller_node" type="path_loader.py" name="path_loader"
       output="screen" required="true">
 
-    <param name="load_path_file" value="$(find segwayrmp400_sim)/data/simple_path.txt" />
+    <param name="path_file" value="$(find segwayrmp400_sim)/data/simple_path.txt" />
+
     <param name="path_frame_id" value="/segwayrmp400/Pose" />
 
-    </node>
+    </node> -->
 
 </launch>
 
