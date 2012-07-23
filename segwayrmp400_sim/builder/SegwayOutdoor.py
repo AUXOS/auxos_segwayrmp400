@@ -1,3 +1,5 @@
+#! /usr/bin/env morseexec
+
 from morse.builder.morsebuilder import *
 import math
 
@@ -7,7 +9,7 @@ vOff=0.3
 zRot=0
 
 # Append ATRV robot to the scene
-segway = WheeledRobot('segwayrmp400')
+segway = WheeledRobot('segwayrmp400_w_em61_trailer')
 segway.properties(Class="SegwayRMP400PhysicsClass", Path="morse/robots/segwayrmp400")
 #segway.translate(z=vOff)
 #segway.rotate(z=-3.0)
@@ -49,7 +51,7 @@ gps = Sensor('gps')
 segway.append(gps)
 gps.configure_mw('ros')
 
-segway.translate(z=0.2)
+#segway.translate(z=0.2)
 
 
 # Configure the environment
