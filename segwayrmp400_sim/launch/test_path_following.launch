@@ -2,10 +2,14 @@
 
     <node pkg="sim_common" type="morse_loader.py" name="morse_loader"
           output="screen" required="true">
-
     <param name="builder_file" value="$(find segwayrmp400_sim)/builder/SegwayOutdoor.py" />
     <param name="edit_mode" value="False" />
 
+    </node>
+
+
+    <node pkg="rqt_follow_path" type="follow_path_client.py" name="follow_path_client"
+          output="screen" required="true">
     </node>
 
     <node pkg="dubins_controller_node" type="dubins_controller_node" name="dubins_controller_node"
