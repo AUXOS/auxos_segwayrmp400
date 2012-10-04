@@ -1,5 +1,8 @@
 #! /usr/bin/env morseexec
 
+import sys
+sys.path.append('/Users/hododav/py3env/lib/python3.2/site-packages')
+
 from morse.builder.morsebuilder import *
 import math
 
