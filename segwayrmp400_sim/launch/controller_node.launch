@@ -1,17 +1,10 @@
 <launch>
-
-    <node pkg="rqt_follow_path" type="follow_path_client.py" name="follow_path_client"
-          output="screen" required="true">
-    </node>
-
     <node pkg="dubins_controller_node" type="dubins_controller_node" name="dubins_controller_node"
           output="screen" required="true">
-
+    
     <param name="robot_topic" value="/segwayrmp400/Pose" />
-    <param name="command_topic" value="/segwayrmp400/Motion_Controller" />
 
-    <!-- <param name="trailer_topic" value="Robot" /> -->
-
+    <param name="command_topic"   value="/segwayrmp400/Motion_Controller" />
 
     <param name="control_mode" value="Robot" />
     <param name="control_rate" value="20" />
@@ -20,9 +13,7 @@
     <param name="path_type" value="DB" />
     <param name="k_y_err" value="0.5" />
     <param name="k_psi_error" value="0.8" />
-    <!-- param name="path_file" value="$(find segwayrmp400_sim)/data/simple_path.txt" / -->
 
     </node>
 
 </launch>
-

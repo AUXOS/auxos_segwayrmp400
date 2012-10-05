@@ -1,0 +1,11 @@
+<launch>
+
+    <node pkg="sim_common" type="morse_loader.py" name="morse_loader"
+          output="screen" required="true">
+    <param name="builder_file" value="$(find segwayrmp400_sim)/builder/SegwayOutdoor.py" />
+    <param name="edit_mode" value="False" />
+
+    </node>
+
+</launch>
+
