@@ -8,7 +8,6 @@ zRot=0
 
 # Append ATRV robot to the scene
 segway = SegwayRMP400()
-segway.unparent_wheels()
 
 # Append an actuator
 motion = MotionVWDiff()
@@ -38,6 +37,8 @@ segway.append(gps)
 
 
 segway.add_default_interface('ros')
+segway.translate(z=vOff)
+segway.unparent_wheels()
 
 # Configure the environment
 env = Environment('is4s/large_field')

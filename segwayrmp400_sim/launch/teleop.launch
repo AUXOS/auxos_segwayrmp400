@@ -10,7 +10,7 @@
         output="screen" required="true">
     <param name="max_linear_vel" type="double" value="2.0" />
     <param name="max_angular_vel" type="double" value="2.0" />
-    <remap from="cmd_vel" to="/segwayrmp400/Motion_Controller" />
+    <remap from="cmd_vel" to="/segway/motion" />
   </node>
 
     <node pkg="sim_common" type="morse_loader.py" name="morse_loader"
