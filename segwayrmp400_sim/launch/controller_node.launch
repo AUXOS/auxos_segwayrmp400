@@ -1,5 +1,5 @@
 <launch>
-    <node pkg="dubins_controller_node" type="dubins_controller_node" name="dubins_controller_node"
+    <node pkg="dubins_controller" type="dubins_controller_node" name="dubins_controller_node"
           output="screen" required="true">
     
     <param name="robot_topic" value="/segway/pose" />
