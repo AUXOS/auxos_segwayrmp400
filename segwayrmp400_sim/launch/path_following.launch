@@ -1,9 +1,9 @@
 <launch>
     <include file="$(find segwayrmp400_sim)/launch/morse_sim.launch"/> 
 
-    <include file="$(find rqt_follow_path)/launch/follow_path_client.launch"/> 
-
     <include file="$(find segwayrmp400_sim)/launch/controller_node.launch"/> 
+
+    <include file="$(find segwayrmp400_sim)/launch/load_path.launch"/> 
 
 </launch>
 
