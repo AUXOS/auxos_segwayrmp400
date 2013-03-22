@@ -22,8 +22,11 @@ segway.append(imu)
 
 
 # Append a Pose sensor
-pose = Pose()
-segway.append(pose)
+#pose = Pose()
+#segway.append(pose)
+
+odom = Odometry()
+segway.append(odom)
 
 # Append a Wheel Encoder sensor
 #encoders = Sensor('wheel_encoders')
@@ -38,8 +41,8 @@ segway.append(gps)
 
 segway.add_default_interface('ros')
 segway.translate(z=vOff)
-segway.unparent_wheels()
+#segway.unparent_wheels()
 
 # Configure the environment
-env = Environment('is4s/large_field')
+env = Environment('is4s/large_field.blend')
 env.aim_camera([1.0470, 0, 0.7854])
