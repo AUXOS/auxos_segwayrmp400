@@ -8,7 +8,7 @@
 
     <param name="control_mode" value="Robot" />
     <param name="control_rate" value="20" />
-    <param name="radius" value="3" />
+    <param name="radius" value="5" />
     <param name="travel_speed" value="1" />
     <param name="path_type" value="DB" />
     <param name="k_y_err" value="0.5" />
