@@ -50,7 +50,7 @@ coils[1].add_stream('ros', 'is4s_morse_additions.middleware.ros.em61.EmDataPubli
 
 trailer_odom = Odometry()
 trailer_odom.name="odom"
-trailer_odom.translate(y=-2.65)
+trailer_odom.translate(x=-2.65)
 trailer.append(trailer_odom)
 
 trailer.translate(x=-0.58, z=0.4)
