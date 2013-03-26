@@ -1,25 +1,8 @@
 <launch>
-  <!-- Start the joy stick interface node -->
-  <node pkg="joy" type="joy_node" name="joy_node" output="screen" 
-        required="true">
-    <param name="autorepeat_rate" value="5" type="double" />
-  </node>
 
-  <!-- Start the node that converts joy messages to cmd_vel's -->
-  <node pkg="joy_to_twist" type="joy_to_twist_z_up.py" name="auxos_joy_to_twist"
-        output="screen" required="true">
-    <param name="max_linear_vel" type="double" value="2.0" />
-    <param name="max_angular_vel" type="double" value="2.0" />
-    <remap from="cmd_vel" to="/segway/motion" />
-  </node>
+  <include file="$(find joy_to_twist)/launch/teleop.launch"/> 
 
-    <node pkg="sim_common" type="morse_loader.py" name="morse_loader"
-          output="screen" required="true">
-
-    <param name="builder_file" value="$(find segwayrmp400_sim)/builder/SegwayOutdoor.py" />
-    <param name="edit_mode" value="False" />
-
-    </node>
+  <include file="$(find segwayrmp400_sim)/launch/morse_sim.launch"/> 
 
 </launch>
 
