@@ -44,11 +44,19 @@ hitch.translate(x=-0.55)
 segway.append(hitch)
 
 trailer = DualEm61Trailer()
-trailer.add_coils()
+coils=trailer.add_coils()
+coils[0].add_stream('ros', 'is4s_morse_additions.middleware.ros.em61.EmDataPublisher')
+coils[1].add_stream('ros', 'is4s_morse_additions.middleware.ros.em61.EmDataPublisher')
+
+trailer_odom = Odometry()
+trailer_odom.name="odom"
+trailer_odom.translate(y=-2.65)
+trailer.append(trailer_odom)
 
 trailer.translate(x=-0.58, z=0.4)
 
 trailer.attach_to(hitch)
+trailer.add_default_interface('ros')
 
 
 segway.add_default_interface('ros')
