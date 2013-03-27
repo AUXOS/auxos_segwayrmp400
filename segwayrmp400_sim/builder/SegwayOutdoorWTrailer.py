@@ -64,7 +64,7 @@ segway.translate(z=vOff)
 #segway.unparent_wheels()
 
 # Configure the environment
-#env = Environment('is4s/large_field.blend')
-env = Environment('land-1/trees')
+env = Environment('is4s/large_field.blend')
+#env = Environment('land-1/trees')
 
 env.aim_camera([1.0470, 0, 0.7854])
