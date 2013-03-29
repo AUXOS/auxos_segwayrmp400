@@ -39,6 +39,12 @@ segway.append(odom)
 gps = GPS()
 segway.append(gps)
 
+camera = VideoCamera()
+camera.translate(x=-12, z=4);
+camera.rotate(y=0.3);
+segway.append(camera);
+
+
 hitch=Sensor('hitch.blend')
 hitch.translate(x=-0.56)
 segway.append(hitch)
