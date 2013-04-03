@@ -38,11 +38,25 @@ segway.append(odom)
 # Append a GPS sensor
 gps = GPS()
 segway.append(gps)
-
 camera = VideoCamera()
-camera.translate(x=-12, z=4);
-camera.rotate(y=0.3);
+camera.translate(x=0.4, z=0.37);
+camera.properties(cam_width=640)
+camera.properties(cam_height=480)
 segway.append(camera);
+
+trailer_camera = VideoCamera()
+trailer_camera.translate(x=-0.35, z=0.37);
+trailer_camera.rotate(x=3.14);
+trailer_camera.properties(cam_width=640)
+trailer_camera.properties(cam_height=480)
+segway.append(trailer_camera);
+
+follow_camera = VideoCamera()
+follow_camera.translate(x=-12, z=4);
+follow_camera.rotate(y=0.3);
+follow_camera.properties(cam_width=640)
+follow_camera.properties(cam_height=480)
+segway.append(follow_camera);
 
 
 hitch=Sensor('hitch.blend')
