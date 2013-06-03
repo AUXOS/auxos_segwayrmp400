@@ -11,8 +11,8 @@
     <param name="radius" value="5" />
     <param name="travel_speed" value="1" />
     <param name="path_type" value="DB" />
-    <param name="k_y_err" value="0.5" />
-    <param name="k_psi_error" value="0.8" />
+    <param name="k_y_err" value="3.1326" />
+    <param name="k_psi_error" value="1.3426" />
 
     </node>
 
