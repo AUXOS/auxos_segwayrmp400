@@ -73,7 +73,7 @@ Visualization Manager:
       Class: rviz/Odometry
       Color: 14; 10; 255
       Enabled: true
-      Keep: 100
+      Keep: 5000
       Length: 1
       Name: Odometry
       Position Tolerance: 0.1
@@ -102,17 +102,17 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 47.1504
+      Distance: 71.0329
       Focal Point:
-        X: 0
-        Y: 0
-        Z: 0
+        X: 18.2347
+        Y: 17.6797
+        Z: -14.9062
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.785398
+      Pitch: 1.5698
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.785398
+      Yaw: 0.0253989
     Saved: ~
 Window Geometry:
   Displays:
@@ -130,5 +130,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 1216
-  X: 580
-  Y: 122
+  X: 590
+  Y: 115
