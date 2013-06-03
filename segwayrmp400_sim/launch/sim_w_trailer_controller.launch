@@ -1,0 +1,10 @@
+<launch>
+    <include file="$(find segwayrmp400_sim)/launch/morse_sim.launch"/> 
+
+    <include file="$(find segwayrmp400_sim)/launch/trailer_controller_node.launch"/> 
+
+    <node pkg="mjpeg_server" type="mjpeg_server" name="mjpeg_server"
+          output="screen" required="true"/>
+
+</launch>
+

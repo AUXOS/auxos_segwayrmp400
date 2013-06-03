@@ -1,0 +1,21 @@
+<launch>
+    <node pkg="dubins_controller" type="dubins_controller_node" name="dubins_controller_node"
+          output="screen" required="true">
+    
+    <param name="robot_topic" value="/segway/odom" />
+    <param name="trailer_topic" value="/trailer/odom" />
+
+    <param name="command_topic"   value="/segway/motion" />
+
+    <param name="control_mode" value="TrailerHeading" />
+    <param name="control_rate" value="20" />
+    <param name="radius" value="5" />
+    <param name="travel_speed" value="1" />
+    <param name="path_type" value="DB" />
+    <param name="k_y_trailer_error" value="2.0138" />
+    <param name="k_psi_trailer_error" value="1.1731" />
+    <param name="k_psi_robot_error_" value="3.1170" />
+
+    </node>
+
+</launch>
