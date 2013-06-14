@@ -1,0 +1,25 @@
+RMP_DEMO_OCU_CONFIGURATION
+RMP Platform Type: 1
+OCU Contoller Type: Logitech
+OCU Comm Interface: Ethernet
+Max Velocity (m/s): 2.2352
+Max Accel (m/s^2): 3.923
+Max Decel (m/s^2): 3.923
+Max DTZ Decel (m/s^2): 3.923
+Coastdown Decel (m/s^2): 1.961
+Max Yaw Rate (rad/s): 3.0
+Max Yaw Accel (rad/s^2): 28.274
+Tire Diameter (m): 0.483616
+Wheel Base Length (m): 0.5842
+Wheel Track Width (m): 0.7112
+Gearbox Ratio: 24.2667
+Config Bitmap: 5
+RMP IP Address: 192.168.1.40
+RMP Port: 8080
+RMP Subnet Mask: 255.255.255.0
+RMP Gateway: 192.168.1.1
+RMP User FB Bitmap 1: 4294967295
+RMP User FB Bitmap 2: 4294967295
+RMP User FB Bitmap 3: 4294967295
+RMP User FB Bitmap 4: 0
+RMP Configuration Loaded: True

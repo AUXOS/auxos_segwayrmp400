@@ -1,0 +1,10 @@
+<launch>
+    <include file="$(find segwayrmp440)/launch/span.launch"/> 
+
+    <include file="$(find segwayrmp440)/launch/propak.launch"/> 
+
+    <node pkg="mjpeg_server" type="mjpeg_server" name="mjpeg_server"
+          output="screen" required="true"/>
+
+</launch>
+
