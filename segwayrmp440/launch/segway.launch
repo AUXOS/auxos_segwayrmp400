@@ -1,0 +1,14 @@
+<launch>
+
+    <node pkg="libsegwayrmp440" type="segwayrmp440_node.py" name="segwayrmp440_node"
+          output="screen" required="true">
+    <param name="rate" value="20.0" />
+    <param name="rmp_ip" value="192.168.1.40" />
+    <param name="rmp_port" value="8080" />
+    <param name="twist_topic" value="/segway/motion" />
+    <param name="interface" value="Ethernet" />
+
+    </node>
+
+</launch>
+
