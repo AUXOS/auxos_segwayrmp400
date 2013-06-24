@@ -1,8 +1,8 @@
 <launch>
-  <node pkg="rostopic" type="rostopic" name="segway_odom_throttle"
-        args="throttle messages /segway/odom 2.0" output="screen" />
+  <node pkg="topic_tools" type="throttle" name="segway_odom_throttle"
+        args="messages /segway/odom 2.0" output="screen" />
 
-  <node pkg="rostopic" type="rostopic" name="trailer_odom_throttle"
-        args="throttle messages /trailer/odom 2.0" output="screen" />
+  <node pkg="topic_tools" type="throttle" name="trailer_odom_throttle"
+        args="messages /trailer/odom 2.0" output="screen" />
 </launch>
 
