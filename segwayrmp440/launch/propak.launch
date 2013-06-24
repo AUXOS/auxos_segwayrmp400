@@ -5,7 +5,7 @@
 
 		<param name="port" value="/dev/ttyS2" />
 		<param name="baudrate" value="115200" />
-		<param name="odom_topic" value="/trailer_odom" />
+		<param name="odom_topic" value="/trailer/odom" />
 		<param name="log_commands" value="" />
 		<param name="configure_port" value="COM2,38400,CMR,NONE" />
 		<!-- <param name="log_commands" value="BESTUTMB ONTIME 1.0; BESTVELB ONTIME 1.0" /> -->
