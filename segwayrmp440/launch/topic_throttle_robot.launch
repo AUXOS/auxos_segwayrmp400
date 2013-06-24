@@ -1,0 +1,6 @@
+<launch>
+  <node pkg="topic_tools" type="throttle" name="segway_odom_throttle"
+        args="messages /segway/odom 2.0" output="screen" />
+
+</launch>
+

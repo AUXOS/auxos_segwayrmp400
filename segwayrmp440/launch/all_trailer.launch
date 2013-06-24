@@ -5,7 +5,7 @@
 
     <include file="$(find segwayrmp440)/launch/trailer_estimator.launch"/> 
 
-    <include file="$(find segwayrmp440)/launch/topic_throttle.launch"/> 
+    <include file="$(find segwayrmp440)/launch/topic_throttle_trailer.launch"/> 
 
     <include file="$(find segwayrmp440)/launch/segway.launch"/> 
 
