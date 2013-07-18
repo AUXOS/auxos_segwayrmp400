@@ -1,0 +1,8 @@
+<launch>
+    <node pkg="trailer_estimator" type="dual_gps_estimator.py" name="estimator_node"
+          output="screen" required="true">
+
+	<param name="hitch_length" value="0.95" />
+
+    </node>
+</launch>
