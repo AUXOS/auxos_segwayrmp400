@@ -31,6 +31,7 @@ segway.append(imu)
 
 odom = Odometry()
 segway.append(odom)
+odom.add_stream('ros', child_frame_id='/robot/base_link')
 
 # Append a Wheel Encoder sensor
 #encoders = Sensor('wheel_encoders')
@@ -73,8 +74,10 @@ coils[1].add_stream('ros', 'is4s_morse_additions.middleware.ros.em61.EmDataPubli
 
 trailer_odom = Odometry()
 trailer_odom.name="odom"
-trailer_odom.translate(x=-2.65)
+trailer_odom.translate(x=-2.35)
 trailer.append(trailer_odom)
+trailer_odom.add_stream('ros', child_frame_id='/trailer/base_link')
+
 
 trailer.translate(x=-0.58, z=0.4)
 

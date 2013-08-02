@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="dual_em61_trailer">
+
+<!-- Some Color Materials -->
+  <material name="Black"><color rgba="0.0 0.0 0.0 1.0"/></material>
+  <material name="orange"><color rgba="0.8 0.16 0.0 1" /></material>
+  <material name="yellow"><color rgba="1.0 1.0 0.0 1" /></material>
+
+<!-- xacro parameters -->
+  <xacro:property name="M_PI" value="3.14159"/>
+  <!-- Robot parameters -->
+  <xacro:property name="ground_clearance" value="0.254" />
+  <!-- This is not including the bumpers -->
+  <xacro:property name="trailer_length" value="3.27" />
+  <!-- This is not including the wheels -->
+  <xacro:property name="trailer_width" value="0.0" />
+  <!-- This is not including equipment and racks on the top -->
+  <xacro:property name="trailer_height" value="0.50" />
+  <xacro:property name="wheel_radius" value="0.0"/>
+  <xacro:property name="wheel_width" value="0.0"/>
+
+<!-- xacro macros -->
+  <xacro:macro name="default_inertial" params="mass">
+    <inertial>
+      <mass value="${mass}" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0"
+               iyy="1.0" iyz="0.0"
+               izz="1.0" />
+      </inertial>
+  </xacro:macro>
+
+<!-- links -->
+  <!-- base_link -->
+  <!-- The link that is the origin of all of the components of the -->
+  <!-- robot and should also represent the main chassis via inertial, -->
+  <!-- visual, and geometry elements of the link -->
+  <link name="base_link"/>
+
+   <!-- zvp Link -->
+  <link name="zvp_link">
+      <xacro:default_inertial mass="80"/>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://segwayrmp400_description/meshes/dual_em61_trailer.stl"/>
+      </geometry>
+      <material name="yellow"/>
+    </visual>
+  </link>
+
+  <joint name="base_zvp_joint" type="fixed">
+    <origin xyz="-0.56 0.0 0.0" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="zvp_link"/>
+  </joint>
+
+  <!-- coil1 Link -->
+  <link name="coil1_link">
+      <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://segwayrmp400_description/meshes/em61.stl"/>
+      </geometry>
+      <material name="orange"/>
+    </visual>
+  </link>
+
+  <joint name="base_coil1_joint" type="fixed">
+    <origin xyz="-0.56 0.5 0.0" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="coil1_link"/>
+  </joint>
+
+  <!-- coil2 Link -->
+  <link name="coil2_link">
+      <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://segwayrmp400_description/meshes/em61.stl"/>
+      </geometry>
+      <material name="orange"/>
+    </visual>
+  </link>
+
+  <joint name="base_coil2_joint" type="fixed">
+    <origin xyz="-0.56 -0.5 0.0" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="coil2_link"/>
+  </joint>  
+
+</robot>
