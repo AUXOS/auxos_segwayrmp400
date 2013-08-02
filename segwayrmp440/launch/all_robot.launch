@@ -7,6 +7,8 @@
 
     <include file="$(find segwayrmp440)/launch/segway.launch"/> 
 
+    <include file="$(find segwayrmp440)/launch/robot_transforms.launch"/> 
+
     <include file="$(find segwayrmp440)/launch/robot_controller_node.launch"/> 
 
 </launch>

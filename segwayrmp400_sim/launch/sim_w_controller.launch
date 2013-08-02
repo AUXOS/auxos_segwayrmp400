@@ -5,6 +5,8 @@
 
     <include file="$(find segwayrmp400_sim)/launch/controller_node.launch"/> 
 
+    <include file="$(find segwayrmp400_description)/launch/transforms.launch"/> 
+
     <node pkg="mjpeg_server" type="mjpeg_server" name="mjpeg_server"
           output="screen" required="true"/>
 

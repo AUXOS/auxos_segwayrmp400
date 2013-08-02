@@ -1,0 +1,7 @@
+<launch>
+  	<group ns="trailer">
+        <param name="tf_prefix"  value="trailer" />
+        <param name="robot_description" command="$(find xacro)/xacro.py '$(find segwayrmp400_description)/urdf/dual_em61_trailer.urdf.xacro'" />
+        <node name="trailer_state_publisher" pkg="robot_state_publisher" type="state_publisher"/>
+    </group>
+</launch>

@@ -5,6 +5,10 @@
 
     <include file="$(find segwayrmp400_sim)/launch/trailer_estimator.launch"/> 
 
+    <include file="$(find segwayrmp400_description)/launch/transforms.launch"/> 
+
+    <include file="$(find segwayrmp400_description)/launch/trailer_transforms.launch"/> 
+
     <node pkg="mjpeg_server" type="mjpeg_server" name="mjpeg_server"
           output="screen" required="true"/>
 
