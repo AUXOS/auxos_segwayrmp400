@@ -3,6 +3,9 @@
 from morse.builder import *
 from is4s_morse_additions.builder import *
 
+# set sim speed to 20 fps
+bpymorse.set_speed(25,0,0)
+
 vOff=0.3
 #zRot=math.pi/2 # correct for vehicle axis being y-forward
 zRot=0
