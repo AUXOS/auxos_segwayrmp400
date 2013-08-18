@@ -23,6 +23,13 @@ imu = IMU()
 imu.translate(z=0.05)
 segway.append(imu)
 
+# append a lidar
+sick = Sick()
+sick.translate(x=0.55, z=0.3)
+sick.properties(Visible_arc = True)
+sick.properties(resolution = 1.0)
+sick.properties(scan_window = 180)
+segway.append(sick)
 
 # Append a Pose sensor
 #pose = Pose()
@@ -45,6 +52,10 @@ segway.append(gps)
 segway.add_default_interface('ros')
 segway.translate(z=vOff)
 #segway.unparent_wheels()
+
+barrel = PassiveObject('/Users/hododav/Downloads/barrel.blend', 'barrel')
+barrel.setgraspable()
+barrel.translate(x=15, y=0, z=-0.1)
 
 # Configure the environment
 env = Environment('is4s/large_field.blend')
