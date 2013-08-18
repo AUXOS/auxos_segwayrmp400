@@ -4,7 +4,7 @@
     
     <param name="robot_topic" value="/segway/odom" />
 
-    <param name="command_topic"   value="/segway/motion" />
+    <param name="command_topic"   value="/auxos/follow_path_cmd" />
 
     <param name="control_mode" value="Robot" />
     <param name="control_rate" value="20" />

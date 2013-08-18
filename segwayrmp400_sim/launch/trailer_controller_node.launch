@@ -5,7 +5,10 @@
     <param name="robot_topic" value="/segway/odom" />
     <param name="trailer_topic" value="/trailer/odom_corrected" />
 
-    <param name="command_topic"   value="/segway/motion" />
+    <param name="command_topic"   value="/auxos/follow_path_cmd" />
+    <param name="bond_topic"   value="/controller_bond" />
+    <param name="uuid_topic"   value="/controller_uuid" />
+    <param name="require_bond"   value="false" />
 
     <param name="control_mode" value="TrailerHeading" />
     <param name="control_rate" value="20" />
