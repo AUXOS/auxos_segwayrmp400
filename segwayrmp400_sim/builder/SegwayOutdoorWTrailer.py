@@ -96,9 +96,9 @@ segway.add_default_interface('ros')
 segway.translate(z=vOff)
 #segway.unparent_wheels()
 
-barrel = PassiveObject('/Users/hododav/Downloads/barrel.blend', 'barrel')
+barrel = PassiveObject('/Users/hododav/devel/is4s_morse_additions/blender/props/ConstructionBarriers.blend', 'barrel')
 barrel.setgraspable()
-barrel.translate(x=15, y=0, z=-0.1)
+barrel.translate(x=15)
 
 # Configure the environment
 env = Environment('is4s/large_field.blend')

@@ -6,6 +6,8 @@
 
     <param name="command_topic"   value="/auxos/follow_path_cmd" />
 
+    <param name="max_lateral_error" value="10.0" />
+
     <param name="control_mode" value="Robot" />
     <param name="control_rate" value="20" />
     <param name="radius" value="5" />

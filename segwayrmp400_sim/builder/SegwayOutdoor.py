@@ -25,10 +25,10 @@ segway.append(imu)
 
 # append a lidar
 sick = Sick()
-sick.translate(x=0.55, z=0.3)
+sick.translate(x=0.55, z=0.25)
 sick.properties(Visible_arc = True)
 sick.properties(resolution = 1.0)
-sick.properties(scan_window = 180)
+sick.properties(scan_window = 270)
 segway.append(sick)
 
 # Append a Pose sensor
@@ -36,7 +36,9 @@ segway.append(sick)
 #segway.append(pose)
 
 odom = Odometry()
+odom.add_stream('ros', child_frame_id='/robot/base_link')
 segway.append(odom)
+
 
 # Append a Wheel Encoder sensor
 #encoders = Sensor('wheel_encoders')
@@ -53,9 +55,15 @@ segway.add_default_interface('ros')
 segway.translate(z=vOff)
 #segway.unparent_wheels()
 
-barrel = PassiveObject('/Users/hododav/Downloads/barrel.blend', 'barrel')
+barrel = PassiveObject('/Users/hododav/devel/is4s_morse_additions/blender/props/ConstructionBarriers.blend', 'barrel')
 barrel.setgraspable()
-barrel.translate(x=15, y=0, z=-0.1)
+barrel.translate(x=10, y=0.5)
+
+barrier = PassiveObject('/Users/hododav/devel/is4s_morse_additions/blender/props/ConstructionBarriers.blend', 'barrier')
+barrier.setgraspable()
+barrier.translate(x=20)
+barrier.rotate(z=1.57)
+
 
 # Configure the environment
 env = Environment('is4s/large_field.blend')
