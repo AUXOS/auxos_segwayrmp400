@@ -3,6 +3,6 @@
         args="messages /segway/odom 2.0" output="screen" />
 
   <node pkg="topic_tools" type="throttle" name="trailer_odom_throttle"
-        args="messages /trailer/odom 2.0" output="screen" />
+        args="messages /trailer/odom_corrected 2.0" output="screen" />
 </launch>
 
