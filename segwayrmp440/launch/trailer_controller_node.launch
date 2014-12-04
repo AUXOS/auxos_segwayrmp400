@@ -3,7 +3,7 @@
           output="screen" required="true">
     
     <param name="robot_topic" value="/segway/odom" />
-    <param name="trailer_topic" value="/trailer/odom" />
+    <param name="trailer_topic" value="/trailer/odom_corrected" />
 
     <param name="command_topic"   value="/segway/motion" />
 
