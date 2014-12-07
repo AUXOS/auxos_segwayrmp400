@@ -1,8 +1,7 @@
 <launch>
-  <node pkg="topic_tools" type="throttle" name="segway_odom_throttle"
-        args="messages /segway/odom 2.0" output="screen" />
+  <include file="$(find segwayrmp440)/launch/topic_throttle_robot.launch"/> 
 
   <node pkg="topic_tools" type="throttle" name="trailer_odom_throttle"
-        args="messages /trailer/odom_corrected 2.0" output="screen" />
+        args="messages /trailer_estimator/odom 2.0" output="screen" />
 </launch>
 

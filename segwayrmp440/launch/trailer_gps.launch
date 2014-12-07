@@ -3,7 +3,7 @@
 	<node pkg="novatel" type="novatel_node" name="trailer_gps" output="screen" 
 	    required="true">
 
-		<param name="port" value="/dev/tty.USA19H141212P1.1" />
+		<param name="port" value="/dev/ttyS2" />
 		<param name="baudrate" value="115200" />
 		<param name="log_commands" value="" />
 		<param name="configure_port" value="COM2,38400,CMR,NONE" />
