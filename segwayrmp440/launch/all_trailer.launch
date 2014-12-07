@@ -1,7 +1,7 @@
 <launch>
-    <include file="$(find segwayrmp440)/launch/span.launch"/> 
+    <include file="$(find segwayrmp440)/launch/robot_gps.launch"/> 
 
-    <include file="$(find segwayrmp440)/launch/propak.launch"/> 
+    <include file="$(find segwayrmp440)/launch/trailer_gps.launch"/> 
 
     <include file="$(find segwayrmp440)/launch/trailer_estimator.launch"/> 
 
