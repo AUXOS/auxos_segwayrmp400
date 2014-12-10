@@ -57,6 +57,7 @@ __author__ = "William Woodall"
 import roslib; roslib.load_manifest('segway_joy_teleop')
 import rospy
 import os
+import time
 
 # ROS msg and srv imports
 from sensor_msgs.msg import Joy
@@ -80,6 +81,9 @@ class SegwayJoyTeleop(object):
         
         # indicates if a motion command was sent on the previous loop
         self.prev_motion_cmd = False
+
+        # previous button states
+        self.previous_buttons = (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
         # Setup the Joy topic subscription
         self.joy_subscriber = rospy.Subscriber("joy", Joy, self.handleJoyMessage, queue_size=1)
@@ -119,36 +123,38 @@ class SegwayJoyTeleop(object):
                 cmd.parameter = 0
                 self.cmd_publisher.publish(cmd)
 
-        if data.buttons[8]==1:
-            rospy.loginfo("Set standby mode.")
+        if (data.buttons[8]==1) and (self.previous_buttons[8]==0):
+            rospy.logdebug("Set standby mode.")
             cmd = Rmp440Command()
             cmd.command = 0
             cmd.parameter = 3
             self.cmd_publisher.publish(cmd)
-        elif data.buttons[9]==1:
-            rospy.loginfo("Set tractor mode.")
+        elif (data.buttons[9]==1) and (self.previous_buttons[9]==0):
+            rospy.logdebug("Set tractor mode.")
             cmd = Rmp440Command()
             cmd.command = 0
             cmd.parameter = 4
             self.cmd_publisher.publish(cmd)
-        elif data.buttons[0] == 1:
-            rospy.loginfo("Play song 12.")
+        elif (data.buttons[0] == 1) and (self.previous_buttons[0]==0):
+            rospy.logdebug("Play song 12.")
             cmd=Rmp440Command()
             cmd.command = 1
             cmd.parameter = 12
             self.cmd_publisher.publish(cmd)
-        elif data.buttons[2] == 1:
-            rospy.loginfo("Play song 6.")
+        elif (data.buttons[2] == 1) and (self.previous_buttons[2]==0):
+            rospy.logdebug("Play song 6.")
             cmd=Rmp440Command()
             cmd.command = 1
             cmd.parameter = 6
             self.cmd_publisher.publish(cmd)
-        elif data.buttons[3] == 1:
-            rospy.loginfo("Play song 7.")
+        elif (data.buttons[3] == 1) and (self.previous_buttons[3]==0):
+            rospy.logdebug("Play song 7.")
             cmd=Rmp440Command()
             cmd.command = 1
             cmd.parameter = 7
             self.cmd_publisher.publish(cmd)
+
+        self.previous_buttons = data.buttons
 
         # only send command if trigger is being held
         if (data.buttons[4]==1):
