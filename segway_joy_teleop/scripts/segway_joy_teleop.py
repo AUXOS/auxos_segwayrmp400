@@ -163,6 +163,7 @@ class SegwayJoyTeleop(object):
             msg.linear.x = 0
             msg.angular.z = 0
             self.twist_publisher.publish(msg)
+            self.prev_motion_cmd = False
 
 ###  If Main  ###
 if __name__ == '__main__':
