@@ -77,6 +77,9 @@ class SegwayJoyTeleop(object):
         rospy.loginfo("Using max_linear_vel: %f and max_angular_vel: %f" %
                       (self.LINEAR_SCALAR, self.ANGULAR_SCALAR))
         
+        # indicates if a motion command was sent on the previous loop
+        self.prev_motion_cmd = False
+
         # Setup the Joy topic subscription
         self.joy_subscriber = rospy.Subscriber("joy", Joy, self.handleJoyMessage, queue_size=1)
         
@@ -127,6 +130,7 @@ class SegwayJoyTeleop(object):
 
         # only send command if trigger is being held
         if (data.buttons[4]==1):
+            self.prev_motion_cmd = True
             trigger_val = data.axes[2]
             trigger_val += 1
             trigger_val /= 2
@@ -142,7 +146,11 @@ class SegwayJoyTeleop(object):
                 scalar = scalar *2
             msg.angular.z *= scalar
             self.twist_publisher.publish(msg)
-    
+        elif self.prev_motion_cmd == True:
+            # send zero command in case deadman was released while 
+            msg.linear.x = 0
+            msg.angular.z = 0
+            self.twist_publisher.publish(msg)
 
 ###  If Main  ###
 if __name__ == '__main__':
