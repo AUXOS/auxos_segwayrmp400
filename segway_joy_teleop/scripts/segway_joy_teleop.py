@@ -56,6 +56,7 @@ __author__ = "William Woodall"
 # ROS imports
 import roslib; roslib.load_manifest('segway_joy_teleop')
 import rospy
+import os
 
 # ROS msg and srv imports
 from sensor_msgs.msg import Joy
@@ -88,6 +89,8 @@ class SegwayJoyTeleop(object):
 
         self.cmd_publisher = rospy.Publisher("~rmp_cmd", Rmp440Command, queue_size = 10)
 
+        self.shutdown_count = 0
+
         # Spin
         rospy.spin()
 
@@ -95,15 +98,28 @@ class SegwayJoyTeleop(object):
         """Handles incoming Joy messages"""
         msg = Twist()
 
-        #see if a command has been requested by the joystick
-        if data.buttons[8]==1 and data.buttons[9]==1:
-            #send powerdown command
-            rospy.loginfo("Shutting down.")
-            cmd = Rmp440Command()
-            cmd.command = 0
-            cmd.parameter = 5
-            self.cmd_publisher.publish(cmd)
-        elif data.buttons[8]==1:
+        if data.buttons[1]==1:
+            self.shutdown_count = self.shutdown_count + 1
+            if (self.shutdown_count % 20)==1:
+                cmd = Rmp440Command()
+                cmd.command = 1
+                cmd.parameter = 2
+                self.cmd_publisher.publish(cmd)
+            elif (self.shutdown_count == 60):
+                cmd = Rmp440Command()
+                cmd.command = 1
+                cmd.parameter = 0
+                self.cmd_publisher.publish(cmd)
+                os.system('poweroff')
+        else:
+            if (self.shutdown_count > 0):
+                self.shutdown_count = 0
+                cmd = Rmp440Command()
+                cmd.command = 1
+                cmd.parameter = 0
+                self.cmd_publisher.publish(cmd)
+
+        if data.buttons[8]==1:
             rospy.loginfo("Set standby mode.")
             cmd = Rmp440Command()
             cmd.command = 0
@@ -120,12 +136,6 @@ class SegwayJoyTeleop(object):
             cmd=Rmp440Command()
             cmd.command = 1
             cmd.parameter = 12
-            self.cmd_publisher.publish(cmd)
-        elif data.buttons[1] == 1:
-            rospy.loginfo("Play song 13.")
-            cmd=Rmp440Command()
-            cmd.command = 1
-            cmd.parameter = 13
             self.cmd_publisher.publish(cmd)
         elif data.buttons[2] == 1:
             rospy.loginfo("Play song 6.")
