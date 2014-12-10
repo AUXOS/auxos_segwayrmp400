@@ -121,11 +121,23 @@ class SegwayJoyTeleop(object):
             cmd.command = 1
             cmd.parameter = 12
             self.cmd_publisher.publish(cmd)
-        elif data.buttons[3] == 1:
+        elif data.buttons[1] == 1:
             rospy.loginfo("Play song 13.")
             cmd=Rmp440Command()
             cmd.command = 1
             cmd.parameter = 13
+            self.cmd_publisher.publish(cmd)
+        elif data.buttons[2] == 1:
+            rospy.loginfo("Play song 6.")
+            cmd=Rmp440Command()
+            cmd.command = 1
+            cmd.parameter = 6
+            self.cmd_publisher.publish(cmd)
+        elif data.buttons[3] == 1:
+            rospy.loginfo("Play song 7.")
+            cmd=Rmp440Command()
+            cmd.command = 1
+            cmd.parameter = 7
             self.cmd_publisher.publish(cmd)
 
         # only send command if trigger is being held
