@@ -3,6 +3,7 @@
   <node pkg="joy" type="joy_node" name="joy_node" output="screen" 
         required="true">
     <param name="autorepeat_rate" value="20" type="double" />
+    <param name="coalesce_interval" value="0.05" type="double" />
   </node>
 
   <!-- Start the node that converts joy messages to cmd_vel's -->
