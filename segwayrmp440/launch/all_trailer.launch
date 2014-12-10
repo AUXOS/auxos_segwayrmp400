@@ -15,6 +15,7 @@
 
     <include file="$(find segwayrmp440)/launch/trailer_controller_node.launch"/> 
 
+    <include file="$(find segwayrmp440)/launch/segway_joy_teleop.launch"/>
 
 </launch>
 

@@ -1,6 +1,6 @@
 <launch>
 
-  <include file="$(find segwayrmp440)/launch/joy_to_twist.launch"/> 
+  <include file="$(find segwayrmp440)/launch/segway_joy_teleop.launch"/> 
 
   <include file="$(find segwayrmp440)/launch/segway.launch"/> 
 
