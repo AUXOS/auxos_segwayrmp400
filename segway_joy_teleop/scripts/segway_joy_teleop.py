@@ -95,29 +95,34 @@ class SegwayJoyTeleop(object):
         #see if a command has been requested by the joystick
         if data.buttons[8]==1 and data.buttons[9]==1:
             #send powerdown command
+            rospy.loginfo("Shutting down.")
             cmd = Rmp440Command()
             cmd.command = 0
             cmd.parameter = 5
             self.cmd_publisher.publish(cmd)
         elif data.buttons[8]==1:
+            rospy.loginfo("Set standby mode.")
             cmd = Rmp440Command()
             cmd.command = 0
             cmd.parameter = 3
             self.cmd_publisher.publish(cmd)
         elif data.buttons[9]==1:
+            rospy.loginfo("Set tractor mode.")
             cmd = Rmp440Command()
             cmd.command = 0
             cmd.parameter = 4
             self.cmd_publisher.publish(cmd)
-        elif data.buttons[3] == 1:
+        elif data.buttons[0] == 1:
+            rospy.loginfo("Play song 12.")
             cmd=Rmp440Command()
             cmd.command = 1
-            cmd.paramter = 12
+            cmd.parameter = 12
             self.cmd_publisher.publish(cmd)
         elif data.buttons[3] == 1:
+            rospy.loginfo("Play song 13.")
             cmd=Rmp440Command()
             cmd.command = 1
-            cmd.paramter = 13
+            cmd.parameter = 13
             self.cmd_publisher.publish(cmd)
 
         # only send command if trigger is being held
