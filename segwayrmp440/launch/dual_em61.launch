@@ -1,0 +1,22 @@
+<launch>
+	<!-- Start the auxos client test node -->
+	<node pkg="em61mk2" type="em61node" name="em61node_1" output="screen" 
+	    required="true">
+
+		<param name="port" value="/dev/ttyS4" />
+		<param name="baudrate" value="9600" />
+		<param name="poll_rate" value="10.0" />
+		<param name="em_name" value="em61mk2_1" />
+	</node>
+
+    <node pkg="em61mk2" type="em61node" name="em61node_2" output="screen" 
+        required="true">
+
+        <param name="port" value="/dev/ttyS5" />
+        <param name="baudrate" value="9600" />
+        <param name="poll_rate" value="10.0" />
+        <param name="em_name" value="em61mk2_2" />
+    </node>
+
+</launch>
+
