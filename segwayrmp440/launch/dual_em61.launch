@@ -7,6 +7,8 @@
 		<param name="baudrate" value="9600" />
 		<param name="poll_rate" value="10.0" />
 		<param name="em_name" value="em61mk2_1" />
+        <param name="error_batt_level" value="10.5" />
+        <param name="warn_batt_level" value="11.0" />
 	</node>
 
     <node pkg="em61mk2" type="em61node" name="em61node_2" output="screen" 
@@ -16,6 +18,8 @@
         <param name="baudrate" value="9600" />
         <param name="poll_rate" value="10.0" />
         <param name="em_name" value="em61mk2_2" />
+        <param name="error_batt_level" value="10.5" />
+        <param name="warn_batt_level" value="11.0" />
     </node>
 
 </launch>
