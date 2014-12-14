@@ -5,7 +5,10 @@
     <param name="rate" value="20.0" />
     <param name="rmp_ip" value="192.168.1.40" />
     <param name="rmp_port" value="8080" />
-
+    <param name="error_batt_soc" value="10.5" />
+    <param name="warn_batt_soc" value="11.0" />
+    <param name="error_temperature" value="130.0" />
+    <param name="warn_temperature" value="110.0" />
     </node>
 
 </launch>
