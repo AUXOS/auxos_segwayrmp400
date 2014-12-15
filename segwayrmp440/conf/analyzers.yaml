@@ -2,12 +2,12 @@ pub_rate: 1.0 # Optional
 analyzers:
   Trailer_Gps:
     type: GenericAnalyzer
-    path: Trailer GPS
+    path: TrailerGPS
     contains: 'trailer_gps'
     remove_prefix: trailer_gps
   Robot_Gps:
     type: GenericAnalyzer
-    path: Robot GPS
+    path: RobotGPS
     contains: 'robot_gps'
     find_and_remove_prefix: robot_gps
   EM61Mk2:
@@ -18,3 +18,7 @@ analyzers:
     type: GenericAnalyzer
     path: SegwayRMP440
     contains: 'segwayrmp440'
+  Joystick:
+    type: GenericAnalyzer
+    path: Joystick
+    contains: 'joy_node'
