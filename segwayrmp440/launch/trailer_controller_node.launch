@@ -14,7 +14,7 @@
     <param name="path_type" value="DB" />
     <param name="k_y_trailer_error" value="2.0138" />
     <param name="k_psi_trailer_error" value="1.1731" />
-    <param name="k_psi_robot_error_" value="3.1170" />
+    <param name="k_psi_robot_error" value="3.1170" />
 
     </node>
 
