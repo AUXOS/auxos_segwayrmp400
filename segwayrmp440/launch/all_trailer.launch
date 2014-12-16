@@ -19,5 +19,9 @@
 
     <include file="$(find segwayrmp440)/launch/aggregator.launch"/>
 
+    <include file="$(find segwayrmp440)/launch/safety_controller_w_trailer.launch"/>
+
+    <include file="$(find segwayrmp440)/launch/topicLogger_server.launch"/>
+
 </launch>
 

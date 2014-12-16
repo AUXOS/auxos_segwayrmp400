@@ -2,10 +2,10 @@
     <node pkg="dubins_controller" type="dubins_controller_node" name="dubins_controller_node"
           output="screen" required="true">
     
-    <param name="robot_topic" value="/segway/odom" />
-    <param name="trailer_topic" value="/trailer/odom_corrected" />
+    <param name="robot_topic" value="/robot_gps/odom" />
+    <param name="trailer_topic" value="/trailer_estimater/odom" />
 
-    <param name="command_topic"   value="/segway/motion" />
+    <param name="command_topic"   value="/safety/cmd_vel" />
 
     <param name="control_mode" value="TrailerHeading" />
     <param name="control_rate" value="20" />

@@ -1,0 +1,18 @@
+<launch>
+
+	<!-- Set params for the Logging mechanism -->
+	<!-- set the local work directory. Here the bagfiles are stored before uploading them. -->
+	<param name="localWorkDirectory_topicLogger" value="/home/auxos/bagfiles" type="str" />
+	<!-- set the directory in which the keyfile is stored. Necessary for scp. -->
+	<param name="keyfileDirectory_topicLogger" value="/home/ker1pal" type="str" />
+	<!-- set the username of the webserver to which the bagfile will be uploaded. -->
+	<param name="usernameWebserver_topicLogger" value="ubuntu" type="str" />
+	<!-- set the URL of the webserver to which the bagfile will be uploaded -->
+	<param name="URLWebserver_topicLogger" value="www.pr2-remotelab.com:/home/ubuntu/ralf_logger_test" type="str" />
+	<!-- set the BaseURL in order to create the link for the bagfile. -->
+	<param name="BaseURLWebserver_topicLogger" value="http://www.pr2-remotelab.com/ralf_logger_test/" type="str" />
+	launch-prefix="gdb -ex run --args"
+	<!-- Launch the TopicLogger ActionServer -->
+	<node name="topicLogger" pkg="topic_logger" type="topicLogger_server" respawn="false" output="screen"/>
+
+</launch>

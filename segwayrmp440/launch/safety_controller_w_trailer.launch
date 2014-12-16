@@ -6,14 +6,14 @@
     <param name="avoid_obstacles"   value="false" />
     <param name="visualize_avoidance"   value="false" />
 
-    <param name="cmd_vel_topic_in" value="/auxos/follow_path_cmd" />
+    <param name="cmd_vel_topic_in" value="/safety/cmd_vel" />
     <param name="cmd_vel_topic_out" value="/segwayrmp440_node/cmd_vel" />
     <param name="robot_fix_topic" value="" />
     <param name="trailer_fix_topic" value="" />
     <param name="lidar_topic" value="/segway/sick" />
     <param name="hitch_angle_topic" value="/trailer_estimator//hitch_angle" />
 
-    <param name="max_hitch_angle" value="75.0" />
+    <param name="max_hitch_angle" value="65.0" />
 
     <param name="vehicle_width" value="3.0" />
     <param name="zone_length" value="6.0" />
