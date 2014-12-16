@@ -11,7 +11,7 @@
     <param name="robot_fix_topic" value="" />
     <param name="trailer_fix_topic" value="" />
     <param name="lidar_topic" value="/segway/sick" />
-    <param name="hitch_angle_topic" value="/trailer_estimator//hitch_angle" />
+    <param name="hitch_angle_topic" value="/trailer_estimator/hitch_angle" />
 
     <param name="max_hitch_angle" value="65.0" />
 
