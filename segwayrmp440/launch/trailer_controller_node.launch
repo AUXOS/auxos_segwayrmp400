@@ -3,7 +3,7 @@
           output="screen" required="true">
     
     <param name="robot_topic" value="/robot_gps/odom" />
-    <param name="trailer_topic" value="/trailer_estimater/odom" />
+    <param name="trailer_topic" value="/trailer_estimator/odom" />
 
     <param name="command_topic"   value="/safety/cmd_vel" />
 
