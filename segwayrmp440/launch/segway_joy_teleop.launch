@@ -10,7 +10,7 @@
   <node pkg="segway_joy_teleop" type="segway_joy_teleop.py" name="segway_joy_teleop"
         output="screen" required="true">
     <param name="max_linear_vel" type="double" value="1.0" />
-    <param name="max_angular_vel" type="double" value="5.0" />
+    <param name="max_angular_vel" type="double" value="1.0" />
     <remap from="~cmd_vel" to="/segwayrmp440_node/cmd_vel" />
     <remap from="~rmp_cmd" to="/segwayrmp440_node/rmp_cmd" />
   </node>
