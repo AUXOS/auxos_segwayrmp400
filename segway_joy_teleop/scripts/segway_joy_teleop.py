@@ -114,7 +114,7 @@ class SegwayJoyTeleop(object):
                 cmd.command = 1
                 cmd.parameter = 0
                 self.cmd_publisher.publish(cmd)
-                os.system('poweroff')
+                os.system('sudo shutdown now')
         else:
             if (self.shutdown_count > 0):
                 self.shutdown_count = 0

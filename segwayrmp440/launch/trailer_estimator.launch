@@ -2,7 +2,7 @@
     <node pkg="trailer_estimator" type="dual_gps_estimator.py" name="trailer_estimator"
           output="screen" required="true">
 
-	<param name="hitch_length" value="1.0" />
+	<param name="hitch_length" value="0.62" />
 
     </node>
 </launch>
