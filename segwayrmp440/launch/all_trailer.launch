@@ -23,5 +23,7 @@
 
     <include file="$(find segwayrmp440)/launch/topicLogger_server.launch"/>
 
+    <include file="$(find segwayrmp440)/launch/dual_em61.launch"/>
+
 </launch>
 
